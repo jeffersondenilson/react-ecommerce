@@ -1,22 +1,21 @@
 import React from "react";
-import Product from "components/Product";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import { IProduct } from "./types";
-import products from "assets/products.json";
+import Home from "pages/Home";
+import Cart from "pages/Cart";
 
 function App() {
   return (
-    <div>
-      <h1>E-commerce</h1>
-      <div>
-        <h2>Produtos</h2>
-        <div>
-          {products.map((product: IProduct) => (
-            <Product product={product} key={product.id} />
-          ))}
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/cart" exact>
+          <Cart />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
