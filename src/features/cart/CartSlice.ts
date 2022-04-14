@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "store/store";
 import { IProduct } from "types";
 
 const initialState: IProduct[] = [
@@ -48,3 +49,8 @@ const cartSlice = createSlice({
 export default cartSlice.reducer;
 
 export const { addProduct, removeProduct } = cartSlice.actions;
+
+export const selectTotalPrice = (state: RootState) =>
+  state.cart.reduce((acc: number, product: IProduct) => {
+    return acc + product.price * (product.quantity || 0);
+  }, 0);
