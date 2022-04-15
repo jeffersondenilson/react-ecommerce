@@ -8,6 +8,7 @@ import { RootState, store } from "store/store";
 import AddOrRemoveButton from "components/AddOrRemoveButton";
 
 import { IProduct } from "types";
+import toBRLCurrency from "utils/toBRLCurrency";
 
 function Cart() {
   const products = useSelector((state: RootState) => state.cart);
@@ -21,13 +22,15 @@ function Cart() {
 
       {products.length > 0 && (
         <div>
-          <h2>Total: {total}</h2>
+          <h2>Total: {toBRLCurrency(total)}</h2>
           {products.map((product: IProduct) => {
+            const subtotal = product.price * (product.quantity || 0);
+
             return (
               <div key={product.id}>
                 <AddOrRemoveButton product={product} />
                 <Product product={product} key={product.id} />
-                <div>Subtotal: {product.price * (product.quantity || 0)}</div>
+                <div>Subtotal: {toBRLCurrency(subtotal)}</div>
               </div>
             );
           })}
