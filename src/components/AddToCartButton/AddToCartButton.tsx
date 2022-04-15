@@ -5,6 +5,7 @@ import { IProduct } from "types";
 
 import cartIcon from "assets/cart-icon.svg";
 import { RootState } from "store/store";
+import { toast } from "react-toastify";
 
 function AddToCartButton({ product }: { product: IProduct }) {
   const dispatch = useDispatch();
@@ -12,10 +13,15 @@ function AddToCartButton({ product }: { product: IProduct }) {
     state.cart.find((p) => p.id === product.id)
   );
 
+  const addToCart = () => {
+    dispatch(addProduct(product));
+    toast.success("Produto adicionado ao carrinho");
+  };
+
   return (
     <div>
       {productInCart && <span>{productInCart.quantity}</span>}
-      <button onClick={() => dispatch(addProduct(product))}>
+      <button onClick={addToCart}>
         <img src={cartIcon} alt="add to cart" />
       </button>
     </div>
