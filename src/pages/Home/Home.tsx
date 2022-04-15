@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Product from "components/Product";
-
-import { useDispatch } from "react-redux";
+import Navbar from "components/Navbar";
 import { addProduct } from "features/cart/CartSlice";
 
 import { IProduct } from "types";
@@ -15,10 +15,9 @@ function Home() {
 
   return (
     <div>
-      <h1>E-commerce</h1>
-      <Link to="/cart">Ver Carrinho</Link>
+      <Navbar />
       <div>
-        <h2>Produtos</h2>
+        <h1>Produtos</h1>
         <div>
           {products.map((product: IProduct) => {
             return (

@@ -2,15 +2,15 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Product from "components/Product";
+import Navbar from "components/Navbar";
 import {
   addProduct,
   removeProduct,
   selectTotalPrice,
 } from "features/cart/CartSlice";
+import { RootState, store } from "store/store";
 
 import { IProduct } from "types";
-import { RootState, store } from "store/store";
-import { Link } from "react-router-dom";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -19,8 +19,8 @@ function Cart() {
 
   return (
     <div>
+      <Navbar />
       <h1>Carrinho</h1>
-      <Link to="/">Produtos</Link>
       <h2>Total: {total}</h2>
       <div>
         {products.length === 0 ? (
