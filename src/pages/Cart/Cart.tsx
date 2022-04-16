@@ -16,24 +16,23 @@ function Cart() {
   return (
     <div>
       <Navbar />
-      <h1>Carrinho</h1>
-      {products.length === 0 && <div>Seu carrinho está vazio.</div>}
+      <div className="page-container">
+        <h1>Carrinho</h1>
+        {products.length === 0 && <div>Seu carrinho está vazio.</div>}
 
-      {products.length > 0 && (
-        <div>
-          <h2>Total: {toBRLCurrency(total)}</h2>
-          {products.map((product: IProduct) => {
-            const subtotal = product.price * (product.quantity || 0);
-
-            return (
-              <div key={product.id}>
-                <Product product={product} buttonType="addOrRemove" />
-                <div>Subtotal: {toBRLCurrency(subtotal)}</div>
-              </div>
-            );
-          })}
-        </div>
-      )}
+        {products.length > 0 && (
+          <div className="page-products">
+            <h2>Total: {toBRLCurrency(total)}</h2>
+            {products.map((product: IProduct) => {
+              return (
+                <div key={product.id}>
+                  <Product product={product} buttonType="addOrRemove" />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

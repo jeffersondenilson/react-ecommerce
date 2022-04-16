@@ -3,14 +3,22 @@ import { RootState } from "store/store";
 import { IProduct } from "types";
 
 const initialState: IProduct[] = [
-  /* {
+  {
     id: 312,
     name: "Super Mario Odyssey",
     price: 197.88,
     score: 100,
     image: "super-mario-odyssey.png",
     quantity: 2,
-  }, */
+  },
+  {
+    id: 501,
+    name: "Horizon Zero Dawn",
+    price: 115.8,
+    score: 290,
+    image: "horizon-zero-dawn.png",
+    quantity: 1,
+  },
 ];
 
 const cartSlice = createSlice({

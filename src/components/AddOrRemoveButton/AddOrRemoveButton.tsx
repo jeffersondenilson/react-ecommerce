@@ -4,6 +4,8 @@ import { IProduct } from "types";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
+import "./AddOrRemoveButton.css";
+
 function AddOrRemoveButton({ product }: { product: IProduct }) {
   const dispatch = useDispatch();
 
@@ -19,11 +21,11 @@ function AddOrRemoveButton({ product }: { product: IProduct }) {
   };
 
   return (
-    <div style={{ display: "inline-flex" }}>
-      <button onClick={add}>+</button>
+    <div className="buttons-container">
+      <button onClick={add}>➕</button>
       {/* <input type="text" value={product.quantity} /> */}
-      <div>{product.quantity}</div>
-      <button onClick={remove}>-</button>
+      <div className="product-count">{product.quantity}</div>
+      <button onClick={remove}>➖</button>
     </div>
   );
 }

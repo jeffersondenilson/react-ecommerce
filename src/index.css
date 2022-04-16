@@ -3,12 +3,18 @@ body {
   padding: 0;
 }
 
-.container {
+.page-container {
   padding: 0.5rem;
 }
 
+.page-products {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media screen and (min-width: 800px) {
-  .container {
+  .page-container {
     padding: 1rem;
   }
 }
