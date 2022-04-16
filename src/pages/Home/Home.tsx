@@ -19,7 +19,6 @@ function Home() {
             return (
               <div key={product.id} style={{ display: "flex" }}>
                 <Product product={product} buttonType="addToCart" />
-                {/* <AddToCartButton product={product} /> */}
               </div>
             );
           })}

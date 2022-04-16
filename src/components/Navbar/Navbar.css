@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
   padding: 1rem 0;
   background-color: blue;
@@ -8,4 +9,10 @@ nav {
 
 nav a {
   color: white;
+}
+
+.cart-link {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }

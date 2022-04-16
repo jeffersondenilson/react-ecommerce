@@ -7,6 +7,9 @@ import cartIcon from "assets/cart-icon.svg";
 import { RootState } from "store/store";
 import { toast } from "react-toastify";
 
+import "./AddToCartButton.css";
+import Pill from "components/Pill";
+
 function AddToCartButton({ product }: { product: IProduct }) {
   const dispatch = useDispatch();
   const productInCart = useSelector((state: RootState) =>
@@ -19,9 +22,9 @@ function AddToCartButton({ product }: { product: IProduct }) {
   };
 
   return (
-    <div>
-      {productInCart && <span>{productInCart.quantity}</span>}
-      <button onClick={addToCart}>
+    <div className="cart-button-container">
+      {productInCart && <Pill value={productInCart.quantity} />}
+      <button className="cart-button" onClick={addToCart}>
         <img src={cartIcon} alt="add to cart" />
       </button>
     </div>

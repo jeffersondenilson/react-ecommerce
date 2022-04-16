@@ -1,0 +1,27 @@
+.cart-button-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.product-quantity {
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cart-button {
+  background-color: blue;
+  border: 1px solid blue;
+  border-radius: 12px;
+}
+
+.cart-button > img {
+  width: 40px;
+  height: 40px;
+}

@@ -27,7 +27,6 @@ function Cart() {
 
             return (
               <div key={product.id}>
-                {/* <AddOrRemoveButton product={product} /> */}
                 <Product product={product} buttonType="addOrRemove" />
                 <div>Subtotal: {toBRLCurrency(subtotal)}</div>
               </div>
