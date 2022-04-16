@@ -3,7 +3,7 @@ import { RootState } from "store/store";
 import { IProduct } from "types";
 
 const initialState: IProduct[] = [
-  {
+  /* {
     id: 312,
     name: "Super Mario Odyssey",
     price: 197.88,
@@ -18,7 +18,7 @@ const initialState: IProduct[] = [
     score: 290,
     image: "horizon-zero-dawn.png",
     quantity: 1,
-  },
+  }, */
 ];
 
 const cartSlice = createSlice({
@@ -51,12 +51,26 @@ const cartSlice = createSlice({
         state.splice(productIndex, 1);
       }
     },
+    changeProductQuantity: (state, action) => {
+      const { product, amount } = action.payload;
+      const newAmount = Number(amount);
+      const productIndex = state.findIndex((p) => p.id === product.id);
+
+      if (productIndex !== -1 && !isNaN(newAmount)) {
+        if (newAmount === 0) {
+          state.splice(productIndex, 1);
+        } else {
+          state[productIndex].quantity = newAmount;
+        }
+      }
+    },
   },
 });
 
 export default cartSlice.reducer;
 
-export const { addProduct, removeProduct } = cartSlice.actions;
+export const { addProduct, removeProduct, changeProductQuantity } =
+  cartSlice.actions;
 
 export const selectTotalPrice = (state: RootState) =>
   state.cart.reduce((acc: number, product: IProduct) => {
