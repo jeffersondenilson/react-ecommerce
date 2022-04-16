@@ -7,7 +7,16 @@ interface PillProps {
 }
 
 function Pill({ value }: PillProps) {
-  return <div className="pill">{value || 0}</div>;
+  return (
+    <>
+      {value && value < 100 && <div className="pill">{value}</div>}
+      {value && value > 99 && (
+        <div className="pill" style={{ fontSize: "0.6rem" }}>
+          99+
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Pill;

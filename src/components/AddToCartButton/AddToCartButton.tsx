@@ -8,7 +8,7 @@ import { RootState } from "store/store";
 import { toast } from "react-toastify";
 
 import "./AddToCartButton.css";
-import Pill from "components/Pill";
+import ChangeQuantityForm from "components/ChangeQuantityForm";
 
 function AddToCartButton({ product }: { product: IProduct }) {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function AddToCartButton({ product }: { product: IProduct }) {
 
   return (
     <div className="cart-button-container">
-      {productInCart && <Pill value={productInCart.quantity} />}
+      {productInCart && <ChangeQuantityForm product={productInCart} />}
       <button className="cart-button" onClick={addToCart}>
         <img src={cartIcon} alt="add to cart" />
       </button>

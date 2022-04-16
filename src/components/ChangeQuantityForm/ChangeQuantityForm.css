@@ -1,0 +1,19 @@
+.product-count {
+  font-size: 1.2rem;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+
+/* Hide input type number scroll buttons */
+/* Chrome, Safari, Edge, Opera */
+.product-count::-webkit-outer-spin-button,
+.product-count::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.product-count {
+  -moz-appearance: textfield;
+}
