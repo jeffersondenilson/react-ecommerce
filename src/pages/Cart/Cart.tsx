@@ -5,7 +5,6 @@ import Product from "components/Product";
 import Navbar from "components/Navbar";
 import { selectTotalPrice } from "features/cart/CartSlice";
 import { RootState, store } from "store/store";
-import AddOrRemoveButton from "components/AddOrRemoveButton";
 
 import { IProduct } from "types";
 import toBRLCurrency from "utils/toBRLCurrency";
@@ -28,8 +27,8 @@ function Cart() {
 
             return (
               <div key={product.id}>
-                <AddOrRemoveButton product={product} />
-                <Product product={product} key={product.id} />
+                {/* <AddOrRemoveButton product={product} /> */}
+                <Product product={product} buttonType="addOrRemove" />
                 <div>Subtotal: {toBRLCurrency(subtotal)}</div>
               </div>
             );

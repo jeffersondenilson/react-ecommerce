@@ -5,20 +5,21 @@ import Navbar from "components/Navbar";
 
 import { IProduct } from "types";
 import productsList from "assets/products.json";
-import AddToCartButton from "components/AddToCartButton";
+
+import "./Home.css";
 
 function Home() {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="container">
         <h1>Produtos</h1>
-        <div>
+        <div className="products">
           {productsList.map((product: IProduct) => {
             return (
-              <div key={product.id}>
-                <Product product={product} />
-                <AddToCartButton product={product} />
+              <div key={product.id} style={{ display: "flex" }}>
+                <Product product={product} buttonType="addToCart" />
+                {/* <AddToCartButton product={product} /> */}
               </div>
             );
           })}
