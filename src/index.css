@@ -5,6 +5,7 @@ body {
 
 .page-container {
   padding: 0.5rem;
+  padding-top: 50px;
 }
 
 .page-products {
@@ -16,5 +17,6 @@ body {
 @media screen and (min-width: 800px) {
   .page-container {
     padding: 1rem;
+    padding-top: 50px;
   }
 }
