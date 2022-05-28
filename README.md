@@ -2,6 +2,8 @@
 
 Projeto que simula página de e-commerce com lista de produtos e carrinho. Feito com React, Redux e React Router.
 
+Demo: https://sweet-gecko-bd9a80.netlify.app
+
 ## Instalação
 
 ```
